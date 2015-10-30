@@ -144,14 +144,14 @@ while 1:
                 print("..The maximum number of nodes has been reached on private cloud ..")
                 if total_num_gcevms < max_gcevms_limit:
                     print(".......Scaling up to GCE......")
-                    os.system(os.system(scale_script + ' up gce'))
+                    os.system(scale_script + ' up gce')
                     total_num_gcevms += 1
                 else:
                     print("...The maximum number of nodes has been reached on GCE...")
         if cpu_usage < MIN_CPU_LIMIT:
             if total_num_gcevms > min_gcevms_limit:
                 print("...Scaling Down on GCE...")
-                os.system(os.system(scale_script + ' down gce'))
+                os.system(scale_script + ' down gce')
                 total_num_gcevms -= 1
             elif total_num_vms > min_vms_limit:
                 print (" ................. Scaling Down on private ....................")
